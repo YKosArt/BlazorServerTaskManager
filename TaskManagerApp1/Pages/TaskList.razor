@@ -1,0 +1,45 @@
+@using TaskManagerApp1.Models
+@inject TaskService TaskService
+@page "/tasklist"
+
+
+<h3>List of tasks</h3>
+
+@foreach (var task in tasks)
+{
+    <div class="glass-rowList">
+        <input type="checkbox" @onchange="() => MarkCompleted(task.Id)" checked="@task.IsCompleted" />
+        <span>
+            <strong>@task.Title</strong> — @task.DueDate.ToString("dd.MM.yyyy HH:mm")
+            @if (task.ReminderTime.HasValue)
+            {
+                <span style="color:gray;"> (Remind: @task.ReminderTime.Value.ToString("dd.MM.yyyy HH:mm"))</span>
+            }
+        </span>
+        <button class="glass-btn" @onclick="() => RemoveTask(task.Id)">Delete</button>
+    </div>
+}
+
+
+
+
+@code {
+    List<TaskItem> tasks = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        tasks = await TaskService.GetTasksAsync();
+    }
+
+    async Task MarkCompleted(int id)
+    {
+        await TaskService.MarkCompletedAsync(id);
+        tasks = await TaskService.GetTasksAsync(); // оновити список
+    }
+
+    async Task RemoveTask(int id)
+    {
+        await TaskService.RemoveTaskAsync(id);
+        tasks = await TaskService.GetTasksAsync();
+    }
+}

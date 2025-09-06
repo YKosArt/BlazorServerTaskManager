@@ -1,0 +1,65 @@
+@using TaskManagerApp1.Models
+
+@inject TaskService TaskService
+@page "/addtaskcomponent"
+
+<h3>New Task</h3>
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div style="color: red; margin-bottom: 10px;">
+        @errorMessage
+    </div>
+}
+
+<div class="glass-form">
+<input @bind="title" placeholder="Назва" class="glass-input"/>
+<textarea @bind="description" placeholder="Опис" class="glass-input"></textarea>
+<div class="glass-row">
+<!-- Календар для вибору дати виконання -->
+<label>Due Date:</label>
+<input type="datetime-local" @bind="dueDate" class="glass-input"/>
+</div>
+<div class="glass-row">
+<!-- Календар для нагадування -->
+<label>Reminder:</label>
+<input type="datetime-local" @bind="reminderTime" class="glass-input"/>
+</div>
+<button class="glass-btn" @onclick="AddTask">Додати</button>
+</div>
+
+@code {
+    string? title;
+    string? description;
+    DateTime dueDate = DateTime.Now;
+    DateTime? reminderTime;
+    string? errorMessage = string.Empty;
+
+
+    async Task AddTask()
+
+    {
+        errorMessage = string.Empty;
+
+        if (reminderTime.HasValue && reminderTime.Value > dueDate)
+        {
+            errorMessage = "The reminder cannot be later than the due date.";
+            return;
+        }
+
+        var task = new TaskItem
+        {
+            Id = new Random().Next(1000),
+            Title = title,
+            Description = description,
+            DueDate = dueDate,
+            ReminderTime = reminderTime,
+            IsCompleted = false
+        };
+        await TaskService.AddTaskAsync(task);
+
+        title = description = string.Empty;
+         dueDate = DateTime.Now;
+        reminderTime = null;
+
+    }
+}

@@ -1,0 +1,9 @@
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.csproj.AssemblyReference.cache
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\rpswa.dswa.cache.json
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.AssemblyInfoInputs.cache
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.AssemblyInfo.cs
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.csproj.CoreCompileInputs.cache
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.MvcApplicationPartsAssemblyInfo.cache
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.RazorAssemblyInfo.cache
+D:\project\Git\Blazor\TaskManagerApp\TaskManagerApp\TaskManagerApp1\TaskManagerApp1\obj\Debug\net7.0\TaskManagerApp1.RazorAssemblyInfo.cs
